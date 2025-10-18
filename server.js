@@ -32,6 +32,7 @@ app.get("/me", async (req, res) => {
         res.status(200).json(response);
     } catch (error) {
         console.error("Error fetching cat fact:", error.message);
+        console.error("Error details:", error.code, error.response?.status);
 
         // Fallback message if API fails
         res.status(200).json({
